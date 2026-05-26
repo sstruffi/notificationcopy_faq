@@ -1,1 +1,648 @@
-<h1>Hello World Wide Web!</h1>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Copy & FAQ Mock-Up</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fcfaf5;
+        font-family: Arial, sans-serif;
+        color: #5a3b4d;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 18px;
+        color: #1fa463;
+        padding: 6px 10px;
+        display: block;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #7ed9a6;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        min-width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        overflow: hidden;
+        z-index: 1000;
+      }
+
+      .dropdown-content li {
+        display: block;
+        margin: 0;
+      }
+
+      .dropdown-content a {
+        padding: 12px 16px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #eeeeee;
+        color: #7ed9a6;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .hero {
+        padding: 55px 0 30px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        color: #5fa978;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        line-height: 1.1;
+        color: #1fa463;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: #5f6f63;
+        font-size: 1.05em;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .meta-row span {
+        background: #eaf8ef;
+        color: #1fa463;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85em;
+        border: 1px solid #c9ecd4;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 26px;
+      }
+
+      .project-button {
+        display: inline-block;
+        text-decoration: none;
+        color: #1fa463;
+        border: 1px solid #1fa463;
+        padding: 11px 18px;
+        border-radius: 999px;
+        font-size: 0.95em;
+        transition: all 0.2s ease;
+      }
+
+      .project-button:hover {
+        background-color: #1fa463;
+        color: white;
+      }
+
+      .section {
+        margin-top: 85px;
+      }
+
+      .section-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .section h2 {
+        color: #1fa463;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .divider {
+        width: 42px;
+        height: 2px;
+        background: #1fa463;
+        margin-bottom: 22px;
+      }
+
+      .section p {
+        line-height: 1.85;
+        color: #5f6f63;
+        margin-bottom: 18px;
+        font-size: 1.04em;
+      }
+
+      .role-block {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid #ccebd8;
+      }
+
+      .role-block strong {
+        color: #16864f;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: start;
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .two-column h2 {
+        color: #1fa463;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+
+      .two-column p,
+      .two-column li {
+        line-height: 1.8;
+        color: #5f6f63;
+        font-size: 1.02em;
+      }
+
+      .two-column ul {
+        padding-left: 20px;
+      }
+
+      .two-column li {
+        margin-bottom: 10px;
+      }
+
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .mockup-card {
+        background: #ffffff;
+        border: 1px solid #d7efdf;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      }
+
+      .mockup-card h3 {
+        color: #1fa463;
+        margin-bottom: 12px;
+        font-size: 1.15em;
+      }
+
+      .mockup-card p {
+        color: #5f6f63;
+        line-height: 1.7;
+        font-size: 0.95em;
+        margin-bottom: 12px;
+      }
+
+      .quote-block {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 28px 0 8px;
+        text-align: center;
+      }
+
+      .quote-block p {
+        font-size: 1.35em;
+        line-height: 1.7;
+        color: #16864f;
+      }
+
+      .faq-box {
+        background: #ffffff;
+        border: 1px solid #d7efdf;
+        border-radius: 16px;
+        padding: 24px;
+        margin-top: 24px;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #d7efdf;
+        padding: 18px 0;
+      }
+
+      .faq-item:last-child {
+        border-bottom: none;
+      }
+
+      .faq-item h3 {
+        color: #16864f;
+        font-size: 1.05em;
+        margin-bottom: 8px;
+      }
+
+      .faq-item p {
+        margin-bottom: 0;
+        font-size: 0.98em;
+      }
+
+      footer {
+        background-color: #1fa463;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 70px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        .two-column,
+        .mockup-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+        }
+
+        nav ul li {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 8px;
+        }
+
+        .dropdown-content {
+          position: static;
+          display: block;
+          box-shadow: none;
+          background: transparent;
+          border-radius: 0;
+          min-width: unset;
+          margin-left: 10px;
+        }
+
+        .hero h1 {
+          font-size: 2.2em;
+        }
+
+        .section {
+          margin-top: 60px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="https://sstruffi.github.io/home.html/">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#">Projects</a>
+            <ul class="dropdown-content">
+              <li><a href="https://sstruffi.github.io/Videography/">Videography</a></li>
+              <li><a href="https://sstruffi.github.io/Branding/">Branding</a></li>
+              <li><a href="https://sstruffi.github.io/web-app/">Web and App</a></li>
+              <li><a href="https://sstruffi.github.io/graphic-design/">Graphic Design</a></li>
+            </ul>
+          </li>
+
+          <li><a href="https://sstruffi.github.io/aboutme.html/">About Me</a></li>
+          <li><a href="https://sstruffi.github.io/contactme.html/">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <section class="hero">
+        <p class="eyebrow">Communication Design / UX Writing</p>
+
+        <h1>Notification Copy & FAQ Mock-Up</h1>
+
+        <p>
+          A communication-focused mock-up designed for WhatsApp’s
+          Post-Quantum Cryptography transition. The project focuses on
+          explaining a sensitive security update in a way that feels calm,
+          clear, and trustworthy for a global audience.
+        </p>
+
+        <div class="meta-row">
+          <span>UX Writing</span>
+          <span>FAQ Design</span>
+          <span>Trust Communication</span>
+          <span>Plain Language</span>
+          <span>Security Messaging</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://sstruffi.github.io/web-app/" class="project-button">
+            Back to Web and App
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>Project Overview</h2>
+        <div class="divider"></div>
+
+        <p>
+          This project explored how WhatsApp could communicate a major
+          encryption update without causing confusion or fear among users.
+          Since end-to-end encryption is strongly connected to trust,
+          the communication needed to feel reassuring before anything else.
+        </p>
+
+        <p>
+          Instead of focusing on technical explanations, the project focused
+          on user understanding. The notification and FAQ were written using
+          simple language to explain that messages remain private and that
+          no action is required from users.
+        </p>
+
+        <div class="role-block">
+          <p>
+            <strong>My role:</strong> I developed the notification copy,
+            FAQ structure, and messaging direction while focusing on tone,
+            accessibility, and trust-centered communication.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="two-column">
+
+        <div>
+          <h2>The Challenge</h2>
+          <div class="divider"></div>
+
+          <p>
+            Encryption updates can easily be misunderstood, especially in
+            regions where surveillance and digital privacy are sensitive issues.
+            Technical wording can increase anxiety instead of building trust.
+          </p>
+
+          <p>
+            The challenge was creating communication that explained the update
+            clearly while keeping users calm, informed, and confident that
+            their privacy protections were not changing.
+          </p>
+        </div>
+
+        <div>
+          <h2>Design Goals</h2>
+          <div class="divider"></div>
+
+          <ul>
+            <li>Lead with reassurance before explanation.</li>
+            <li>Use plain, globally accessible language.</li>
+            <li>Keep messaging short and mobile-friendly.</li>
+            <li>Reduce misinformation and panic.</li>
+            <li>Clarify that no user action is required.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="quote-block">
+        <p>
+          “Your messages stay private. We’re improving security for the future.”
+        </p>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>Notification Copy</h2>
+        <div class="divider"></div>
+
+        <p>
+          The notification was designed as a direct message from WhatsApp.
+          It avoids overwhelming users with technical details and instead
+          focuses on reassurance, clarity, and transparency.
+        </p>
+
+      </div>
+
+      <div class="mockup-grid">
+
+        <div class="mockup-card">
+          <h3>Opening Message</h3>
+
+          <p>
+            Hi, we’re introducing a new security update to help protect
+            your conversations in the future.
+          </p>
+        </div>
+
+        <div class="mockup-card">
+          <h3>Simple Explanation</h3>
+
+          <p>
+            This update happens automatically and does not change how
+            WhatsApp works for you.
+          </p>
+        </div>
+
+        <div class="mockup-card">
+          <h3>Privacy Reassurance</h3>
+
+          <p>
+            Your messages and calls remain protected with end-to-end encryption.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>FAQ Mock-Up</h2>
+        <div class="divider"></div>
+
+        <p>
+          The FAQ section was created to answer common user concerns in
+          clear and accessible language. The structure focuses on real
+          questions users may ask after seeing the notification.
+        </p>
+
+        <div class="faq-box">
+
+          <div class="faq-item">
+            <h3>Is WhatsApp changing how my messages are protected?</h3>
+
+            <p>
+              No. Your messages will continue to be protected with
+              end-to-end encryption. This update helps keep that
+              protection strong in the future.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can WhatsApp read my messages after this update?</h3>
+
+            <p>
+              No. WhatsApp cannot read or listen to your messages or calls.
+              Only you and the person you are communicating with can access them.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Will this affect my privacy?</h3>
+
+            <p>
+              No. Your privacy protections remain the same.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do I need to do anything?</h3>
+
+            <p>
+              No. The update happens automatically, so you do not need
+              to change your settings or take any action.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Why is WhatsApp updating its encryption?</h3>
+
+            <p>
+              Technology changes over time. This update helps keep
+              WhatsApp secure against future technological changes.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>Design Thinking</h2>
+        <div class="divider"></div>
+
+        <p>
+          The writing style intentionally avoids technical jargon like
+          “Post-Quantum Cryptography” in the first interaction. Instead,
+          the communication focuses on what users actually care about:
+          privacy, safety, and whether anything about their experience
+          is changing.
+        </p>
+
+        <p>
+          This approach helps reduce anxiety while still communicating
+          transparency and trust.
+        </p>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>Interactive Prototype</h2>
+        <div class="divider"></div>
+
+        <p>
+          View the full interactive Figma prototype for the notification
+          copy and FAQ mock-up. The prototype demonstrates the mobile
+          user flow, messaging structure, and communication design
+          created for WhatsApp’s PQC transition.
+        </p>
+
+        <div class="project-links">
+          <a
+            href="https://www.figma.com/proto/4b14kv9wGh66jC0GYrkPLw/GBDA-204---WhatsApp?node-id=6-1909&p=f&t=QILg4VOT0N4RJX1q-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A1909"
+            class="project-button"
+            target="_blank"
+          >
+            View Figma Prototype
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+
+        <h2>Outcome</h2>
+        <div class="divider"></div>
+
+        <p>
+          The final mock-up creates a clearer communication strategy for
+          a sensitive security update. The notification provides immediate
+          reassurance, while the FAQ supports users who want more detail
+          without overwhelming them.
+        </p>
+
+        <p>
+          Overall, the project demonstrates how communication design and
+          UX writing can make complex technology feel understandable,
+          trustworthy, and user-centered.
+        </p>
+
+      </div>
+    </div>
+
+    <footer>
+      @ 2026 Sara Truffi - All Rights Reserved
+    </footer>
+
+  </body>
+</html>
